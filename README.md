@@ -1,3 +1,8 @@
+# ROADMAP
+* Cleaner logs folder naming
+* Deletion in the YT PLaylist of downloaded video
+* Add the name of the yt chanel at the end of the filename
+
 # YouTube Watch Later Downloader
 
 A small vibe-coded C program that provides a cleaner and more controlled environment around `yt-dlp` for downloading a YouTube Watch Later playlist.
@@ -63,9 +68,3 @@ It is **not affiliated with or endorsed by the yt-dlp project**.
 ## License
 
 Released under the **Unlicense**. See [`LICENSE`](LICENSE).
-
-
-# ROADMAP
-* Cleaner logs folder naming
-* Deletion in the YT PLaylist of downloaded video
-* Add the name of the yt chanel at the end of the filename
