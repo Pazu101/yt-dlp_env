@@ -907,16 +907,19 @@ static void cleanup_old_logs(void) {
     }
     g_pot_pid = -1;
 
-    /* 7. Renommage du dossier selon le statut, pour piloter la purge future. */
+/* 7. Renommage du dossier selon le statut, pour piloter la purge future. */
     char final_log_dir[2100];
+    char log_dir_name[128]; /* juste le nom du dossier (pas le chemin complet), pour un affichage propre */
     snprintf(final_log_dir, sizeof final_log_dir, "%s_%s", log_dir, has_error ? "ERR" : "OK");
     if (rename(log_dir, final_log_dir) != 0) {
         fprintf(stderr, "Avertissement : impossible de renommer %s (%s)\n", log_dir, strerror(errno));
         snprintf(final_log_dir, sizeof final_log_dir, "%s", log_dir);
+        snprintf(log_dir_name, sizeof log_dir_name, "%s", ts); /* renommage raté : nom resté sans suffixe */
+    } else {
+        snprintf(log_dir_name, sizeof log_dir_name, "%s_%s", ts, has_error ? "ERR" : "OK");
     }
 
-    printf("%sLogs enregistrés dans :%s\n  %s\n\n", COL_DIM, COL_RESET, final_log_dir);
-
+    printf("%sLogs :%s [%s]\n\n", COL_DIM, COL_RESET, log_dir_name);
     sa_free(&wl_ids);
     sa_free(&dctx.error_lines);
     sa_free(&dctx.error_ids);
