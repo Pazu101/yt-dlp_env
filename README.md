@@ -1,7 +1,8 @@
 # ROADMAP
-* Cleaner logs folder naming
-* Deletion in the YT PLaylist of downloaded video
-* Add the name of the yt chanel at the end of the filename
+* Have the new videos from subscriptions listed in the terminal and let used choose the ones to download.
+* Cleaner logs folder naming.
+* Once the video is downloaded, delete it from the watch later playlist.
+* Add the name of the yt chanel at the end of the filename.
 
 # YouTube Watch Later Downloader
 
